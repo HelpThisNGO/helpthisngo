@@ -9,3 +9,10 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+Helpthisngo.Repo.delete_all Helpthisngo.User
+
+Helpthisngo.User.changeset(%Helpthisngo.User{}, %{name: "Test User", email: "testuser@example",
+password: "secret", password_confirmation: "secret"})
+|> Helpthisngo.Repo.insert!
+
